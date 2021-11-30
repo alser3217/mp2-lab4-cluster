@@ -6,7 +6,11 @@
 #include <iostream>
 
 int main() {
-  TasksStreamSimulator simulator(1000, 64, 50, 0.4);
+  std::vector<double> par(4);
+  std::cout << "Enter cluster's number of  tacts, number of processors, queue size and intensity:" << std::endl;
+  for (int i = 0; i < 4; i++)
+    std::cin >> par[i];
+  TasksStreamSimulator simulator(par);
   simulator.begin();
   std::cout << "Number of generated tasks: " << simulator.get_generated_tasks() << std::endl;
   std::cout << "Number of tasks in queue: " << simulator.get_tasks_in_queue() << std::endl;

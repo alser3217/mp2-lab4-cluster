@@ -4,10 +4,18 @@
 #include "processor.h"
 #include "task.h"
 #include "statistics.h"
+
 #include <random>
 #include <ctime>
-
+#include <vector>
 #include <iostream>
+
+TasksStreamSimulator::TasksStreamSimulator(std::vector<double> parameters) {
+  number_of_tacts = parameters[0];
+  number_of_processors = parameters[1];
+  queue_size = parameters[2];
+  intensity = parameters[3];
+}
 
 int generate_int(int min, int max) { 
   std::random_device rd;
