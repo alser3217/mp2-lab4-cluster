@@ -29,7 +29,7 @@ public:
 
 template <typename T>
 TQueue<T>::~TQueue() {
-  delete data;
+  delete[] data;
 }
 
 template<typename T>
